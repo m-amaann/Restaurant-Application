@@ -11,7 +11,7 @@ import '../App.css';
 
 import image1 from '../assets/cover/3.jpg';
 import image2 from '../assets/cover/image2.jpeg';
-import about1 from '../assets/cover/about.avif';
+import about1 from '../assets/cover/about.jpg';
 import OFFER from '../assets/cover/burger/3.jpeg';
 
 //ICONS
@@ -56,7 +56,7 @@ function Home() {
           <div className="container">
             <div className="row">
               <div className="col-lg-4" data-aos="zoom-in" >
-                <img src={about1} alt="Interior" className="about-img" />
+                <img src={about1} alt="Sea-King" className="about-img" />
               </div>
               <div data-aos="fade-left"  data-aos-delay="500" className="col-lg-8">
                 <div className="about-content">
@@ -115,9 +115,6 @@ function Home() {
             </div>
           </div>
         </section>
-
-
-
 
 
         {/* Special Menu Items */}
