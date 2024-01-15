@@ -1,0 +1,129 @@
+/* about.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* About Page Heading */
+.about-heading {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'Josefin Sans';
+  margin-bottom: 1rem;
+}
+
+.row {
+  padding-bottom: 30px;
+}
+
+
+.about-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+  font-family: 'Poppins';
+  
+}
+
+/* Images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+.left-image,
+.right-image {
+  width: calc(50% + 30px);
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.right-image {
+  position: absolute;
+  top: 60px; 
+  right: 0;
+  z-index: 2;
+}
+
+.about-subheading,
+.about-subtext {
+  margin-left: 50%; 
+  
+}
+
+.about-subheading {
+  font-size: 2rem; 
+  color: #333;
+  max-width: 500px;
+  margin-bottom: 0.5rem; 
+  margin-left: 40px;
+  padding-left: 0;
+  font-family: 'Josefin Sans';
+
+}
+
+.about-subtext {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-left: 40px;
+  padding-left: 0;
+  font-family: 'Poppins';
+
+}
+
+.about-btn {
+  background-color: #e76f51;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  max-width: 70%;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: #cf6039;
+}
+
+/* Responsive Design */
+@media (max-width: 990px) {
+  .left-image,
+  .right-image {
+    width: 100%;
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: auto;
+  }
+
+  .about-heading {
+    font-size: 2rem;
+  }
+
+  .about-subheading,
+  .about-subtext {
+    padding-top: 10px;
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .about-subheading {
+    font-size: 1.5rem;
+  }
+
+  .left-image {
+    margin-bottom: -50px;
+  }
+}

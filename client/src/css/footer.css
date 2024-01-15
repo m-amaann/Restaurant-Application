@@ -1,0 +1,162 @@
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background: #ED8C74;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    
+    
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+  }
+  
+  .footer-brand {
+    flex-basis: 20%;
+  }
+  
+  .footer-logo {
+    max-width: 180px;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-link {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+  
+  .link-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .link-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .link-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f4c3b7;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  
+  .link-section ul li a:hover {
+    color: #ffc107;
+    transform: translateX(2px);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #e4a798;
+    padding-top: 20px;
+    margin-top: 30px;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+    font-weight: 300;
+
+  }
+  
+
+
+  @media (max-width: 990px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-brand,
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-links {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .link-section {
+    margin-bottom: 20px;
+  }
+}
+
+/* Styles for tablets */
+@media (max-width: 990px) {
+  .footer {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-brand {
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-links .link-section {
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+  }
+}
+
+/* Styles for mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 20px;
+  }
+
+  .footer-logo {
+    margin-bottom: 10px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-links .link-section {
+    padding: 0;
+  }
+
+  .footer-bottom {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,135 @@
+/* LOGIN PAGE */
+.signin-page {
+  position: relative;
+  height: 100vh;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+}
+
+.logo-signin {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 160px;
+}
+
+.signin-form {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(125, 125, 125, 0.1);
+  border-radius: 10px;
+}
+
+.form-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  height: 3.1rem;
+  padding: 0.75rem 1rem;
+  font-size: 15px;
+  border-radius: 13px;
+  font-family: 'Poppins';
+  border: 1px solid #ced4da;
+}
+
+.passwordinput {
+  margin-top: 20px;
+}
+
+
+.btn-dark {
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  background-color: #026fdc;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 80%;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-family: 'Poppins';
+
+}
+
+.btn-dark:hover {
+  background-color: #c7603a;
+}
+
+.forgot-password {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.create-account {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.signup-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.btn-google {
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  background-color: #efefef;
+  font-size: 0.9rem;
+  font-family: 'Poppins';
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: none;
+
+}
+
+.google-icon {
+  margin-right: 0.5rem;
+  width: 20px;
+  height: auto;
+}
+
+.btn-google {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+
+.image-container {
+  background: url('../assets/cover/SignIn.avif') center/cover no-repeat;
+  flex: 1;
+}
+
+
+
+.has-error input {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}

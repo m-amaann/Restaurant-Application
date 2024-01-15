@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+a {
+  text-decoration: none !important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* ABOUT SECTION START */
+.about-section {
+  padding: 50px 0;
+}
+
+.about-section .about-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.about-section .about-content {
+  padding-top: 0;
+  padding-left: 15px;
+}
+
+.about-section .about-content h2 {
+  display: inline-block;
+  position: relative;
+  font-family: 'Josefin Sans';
+  margin-bottom: 35px;
+}
+
+.about-section .about-content h2::after {
+  content: '';
+  display: block;
+  width: 55%;
+  border-radius: 5px;
+  height: 5px;
+  background-color: #e25151;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.about-section .about-content h3 {
+  margin-bottom: 1rem;
+  color: #FF9000;
+}
+
+.about-section .about-content p {
+  color: #666;
+  padding-top: 15px;
+  line-height: 1.9rem;
+}
+
+.buttons-container {
+  margin-top: 2rem;
+}
+
+.custom-button {
+  color: white;
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-button.custom-book-table {
+  background-color: #ff9000;
+  border: none;
+  margin-top: 2rem;
+  padding: 11px 30px;
+  width: 37%;
+  border-radius: 50px;
+}
+
+.custom-button.custom-book-table:hover {
+  opacity: 0.7;
+}
+/* ABOUT END */
+
+
+
+
+
+
+
+
+/* Register Start */
+.signup-page {
+  height: 100vh;
+  background-image: url('../assets/Background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+}
+
+.signup-title {
+  font-size: 27px;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+}
+
+.signup-subtitle {
+  font-size: 15px;
+  color: #777;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-group-text {
+  background-color: #f5f5f5;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  border-radius: 0.375rem 0 0 0.375rem;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.form-control {
+  height: 3rem;
+  padding-left: 3rem;
+  border-radius: 0.375rem;
+  border: 1px solid #ced4da;
+  font-size: 15px;
+  width: 100%;
+}
+
+.input-group-icon {
+  position: absolute;
+  left: 10px;
+  border-radius: 0.375rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #757575;
+}
+
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .input-group {
+  flex: 1;
+}
+
+.form-row .input-group:not(:last-child) {
+  margin-right: 15px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+
+.terms-text {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.login-link,
+.terms-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.divider {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+
+/* OFFER SECTION STYLING */
+.offer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  position: relative;
+}
+
+.offer-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.offer-image {
+  width: 100%;
+  transform: translate(-10%);
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.offer-details {
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background-color: #e76f51;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offer-details h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.offer-details .offer-text {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.offer-button {
+  background-color: #fff;
+  color: #e76f51;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #e76f51;
+}
+
+.offer-button:hover {
+  background-color: #e76f51;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.info-section {
+  padding: 50px 0;
+}
+
+.info-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.famous-dishes h3 {
+  margin-bottom: 15px;
+}
+
+.famous-dishes .dishes-image-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.famous-dishes .img-fluid {
+  width: calc(33% - 5px);
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.dishes-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dishes-row .col-md-6 {
+  padding: 0;
+  width: 34%;
+  border-radius: 10px;
+}
+
+
+
+/* Promosion Order start */
+.text-yellow {
+  color: #ffc107; 
+}
+
+.order-delivery-section .order-delivery-title {
+  font-size: 38px;
+  margin-bottom: 2rem;
+  font-family: 'Josefin Sans';
+  font-weight: 600;
+
+}
+
+.delivery-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 290px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.delivery-box h3 {
+  font-size: 26px;
+  font-family: 'Josefin Sans';
+}
+
+.delivery-box p {
+  font-size: 13px;
+  font-weight: normal;
+  font-family: 'Poppins';
+  line-height: 1.5rem;
+  color: gray;
+  
+ 
+}
+
+.delivery-box.highlight {
+  background-color: #e76f51b1;
+}
+
+.highlight .highligt-text  {
+  color: white;
+}
+
+.delivery-box:hover {
+  transform: translateY(-8px);
+}
+
+.icon {
+  height: 100px; 
+  margin-bottom: 1rem;
+}
+/* Promosion Order End */
+
+
+
+
