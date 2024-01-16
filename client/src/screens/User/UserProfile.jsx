@@ -6,6 +6,7 @@ import UserSidebar from '../../components/userProfile/UserSidebar';
 import './UserProfile.css'
 import Footer from '../../components/layouts/Footer';
 import UserAccount from '../../components/userProfile/UserAccount';
+import UserOrder from '../../components/userProfile/UserOrder';
 
 
 function UserProfile() {
@@ -24,6 +25,7 @@ function UserProfile() {
           </div>
           <div className="right">
             {activepage === 'accountsettings' && <UserAccount />}
+            {activepage === 'myorders' && <UserOrder />}
           </div>
         </div>
       </div>

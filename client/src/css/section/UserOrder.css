@@ -1,0 +1,67 @@
+.user-order {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+.user-order h2 {
+    font-family: 'Josefin Sans';
+    text-align: left;
+    font-size: 25px;
+}
+
+.table {
+    background-color: #fff;
+}
+
+.table thead th {
+    background-color: #f4f3f3;
+    color: #8c8b8b;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+
+}
+
+.table tbody tr td {
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #9c9c9c;
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.table tbody tr .orderIdbody {
+    color: rgb(58, 55, 55);
+}
+
+.table tbody tr .orderstatus .badge {
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px; 
+    font-weight: 500; 
+    padding: 0.5em 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+.badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.orderview-icon
+{
+    justify-content: center;
+    text-align: center;
+    cursor:pointer;
+
+}
+
+.orderview-icon svg {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+}

@@ -28,11 +28,18 @@
 }
 
 
+.stylenone {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 .userSidebar .s1:hover {
-  background-color: rgba(246, 246, 246);
-  border-radius: 5px;
   cursor: pointer;
-  color: grey;
+  color: #007bff;
+  border-left-color: #007bff;
+  background-color: #f0f0f0;
+  
 }
 
 .userSidebar .s2 {
@@ -45,38 +52,3 @@
 
 
 
-
-
-
-/* 
-.sidebar {
-    flex: 0 0 250px;
-    background: #eeeeee;
-    padding-top: 20px;
-    height: 100vh;
-    box-shadow: 4px 0 5px -2px rgba(0, 0, 0, .2);
-  }
-  
-  .sidebar-item {
-    display: block;
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    border-left: 3px solid transparent;
-    font-weight: 500;
-  }
-  
-  .sidebar-item:hover {
-    color: #007bff;
-    background-color: #f0f0f0;
-    border-left-color: #007bff;
-  }
-
-
-
-  @media (max-width: 768px) {
-    .sidebar {
-      flex-basis: 100px;
-    }
-  
-  } */

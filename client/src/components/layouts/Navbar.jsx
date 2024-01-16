@@ -61,9 +61,7 @@ const Navbar = () => {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <img
-                    src={user.profileImage}
-                    className="profile-image rounded-circle navbar-profile-img"
+                  <img src={user.profileImage} className="profile-image rounded-circle navbar-profile-img"
                     alt="User profile"
                   />
                 </button>

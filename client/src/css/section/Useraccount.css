@@ -1,0 +1,41 @@
+
+.account-container {
+    padding-top: 30px;
+}
+
+
+.account-title {
+  font-family: 'Josefin Sans';
+  text-align: left;
+  padding-bottom: 20px;
+  font-size: 25px;
+}
+
+.edit-button {
+    position: relative;
+    top: -40px; 
+    right: -35px; 
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    padding: 8px;
+    line-height: 1;
+    background-color: #fff;
+    color: #fff; /* White text */
+    border: 1px solid grey;
+  }
+  
+  .edit-icon {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+    top: -5px;
+    right: 2px;
+  }
+
+  
+  .profileimage{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
