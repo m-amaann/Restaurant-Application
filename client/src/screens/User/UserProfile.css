@@ -15,12 +15,11 @@
 
 
 .Userprofile-container .userprofile .left {
-    /* border-right: 1px solid rgb(207, 207, 207); */
-    background-color: #fcfcfc;
-    /* min-height: 50vh; */
+   
+    background-color: #fcf7f7;
     border-radius: 10px;
     min-height: 80vh;
-    /* flex: 0 0 250px; */
+    
     width: 18%;
 }
 

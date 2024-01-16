@@ -6,7 +6,7 @@ const DatauriParser = require('datauri/parser');
 const path = require('path');
 const User = require('../Models/User');
 
-const { generateAccessToken, generateRefreshToken } = require('../middleware/token'); // Update the path to your token utility functions
+const { generateAccessToken, generateRefreshToken } = require('../middleware/token'); 
 
 
 // Configure Cloudinary
@@ -111,7 +111,7 @@ exports.login = async (req, res) => {
 };
 
 
-// Refresh token route access handle
+// Refresh token route access 
 exports.refreshToken = (req, res) => {
   try {
     const accessToken = generateAccessToken({ id: req.userId });
@@ -120,5 +120,41 @@ exports.refreshToken = (req, res) => {
   } catch (error) {
     console.error('Error generating access token:', error);
     res.status(403).json({ error: 'Could not refresh access token' });
+  }
+};
+
+
+
+// Get all users
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error while fetching users' });
+  }
+};
+
+
+
+// Get data of the currently logged-in user
+exports.getLoggedUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json({
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+      profileImage: user.profileImage,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error while fetching user data' });
   }
 };

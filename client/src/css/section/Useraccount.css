@@ -8,29 +8,29 @@
   font-family: 'Josefin Sans';
   text-align: left;
   padding-bottom: 20px;
+  color: #e66d4f;
   font-size: 25px;
+
 }
 
 .edit-button {
     position: relative;
-    top: -40px; 
-    right: -35px; 
-    height: 25px;
-    width: 25px;
+    top: 50px; 
+    right: 45px; 
     border-radius: 50%;
-    padding: 8px;
+    padding: 5px;
     line-height: 1;
     background-color: #fff;
-    color: #fff; /* White text */
-    border: 1px solid grey;
+    color: #fff;
+    border: 1px solid #e66d4f;
+    
   }
   
   .edit-icon {
     position: relative;
     display: inline-block;
     margin-bottom: 0;
-    top: -5px;
-    right: 2px;
+  
   }
 
   
