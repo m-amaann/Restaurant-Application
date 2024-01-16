@@ -68,15 +68,8 @@ const Navbar = () => {
                   />
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="##">
-                    Profile
-                  </a>
-                  <a class="dropdown-item" href="##">
-                    Dashboard
-                  </a>
-                  <a class="dropdown-item" href="##">
-                    Logout
-                  </a>
+                  <a class="dropdown-item" href="/user/accountsettings">Profile</a>
+                  <a class="dropdown-item" href="##">Logout</a>
                 </div>
               </div>
             </>
