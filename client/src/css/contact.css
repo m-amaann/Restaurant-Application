@@ -75,7 +75,22 @@
   .contact-form .send {
     margin-bottom: 20px;
   }
+
+  .map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (change this to 75% for 4:3 aspect ratio) */
+    overflow: hidden;
   }
+  
+  /* Responsive iframe */
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
   
   .section-title h2 {
     font-weight: 700;
