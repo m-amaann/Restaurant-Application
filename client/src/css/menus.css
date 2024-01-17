@@ -1,64 +1,119 @@
-/* AllMenuItems.css */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .sidebar {
-    /* Styling for sidebar */
-  }
-  
-  .search-bar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .category-list {
+.menu-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.sidebar {
+    padding-right: 20px;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+
+
+/* Search bar */
+.form {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.form .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #9ca3af;
+}
+
+.form span {
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #a0aab8;
+}
+
+.form-input{
+
+    height: 50px;
+    text-indent: 33px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.form-input:focus{
+    box-shadow: none;
+    border:gray;
+    background-color: #fbebe6;
+}
+/* Search-bar end */
+
+
+
+.category-title 
+{
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.category-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .category-list li {
+    margin: 0;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 4px;
     cursor: pointer;
-  }
-  
-  .category-list li:hover {
-    background-color: #f8f8f8;
-  }
-  
-  .product-display-area {
-    /* Styling for the product display area */
-  }
-  
-  .page-title {
+    transition: left 0.3s ease;
+}
+
+.category-item.active {
+    color: #E86F4F;
+}
+
+.category-item:hover {
+    background-color: #f2f2f2;
+}
+
+.category-icon {
+    color: #ced4da;
+}
+
+.product-display-area .page-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .product-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Include the styles from your Card.css */
-  
-  /* Media queries for responsiveness */
-  @media (max-width: 767px) {
-    .sidebar {
-      display: none; /* Hide the sidebar on smaller screens if desired */
+    margin-bottom: 24px;
+}
+
+.product-container .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
     }
-    .product-container {
-      justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
     }
-  }
-  
-  /* Pagination styles */
-  /* ... your existing pagination styles ... */
-  
+}
+
+@media (max-width: 767.98px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
