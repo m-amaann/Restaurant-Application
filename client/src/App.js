@@ -14,6 +14,7 @@ import Popup from "./components/Popup";
 import Contact from "./screens/Contact";
 import Menus from "./screens/Menus";
 import UserProfile from "./screens/User/UserProfile";
+import CategoryMenu from "./screens/AllView/CategoryMenu";
 
 
 
@@ -28,6 +29,9 @@ const Routing = () => {
       <Route path="/Contact" element={<Contact />} />
       <Route path="/Menu" element={<Menus />} />
       <Route path="/user/:activepage" element={<UserProfile />} />
+
+      <Route path="/Categoryall" element={<CategoryMenu />} />
+      
       
     </Routes>
   );

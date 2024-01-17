@@ -1,0 +1,35 @@
+.pagination {
+    display: flex;
+    list-style-type: none;
+    justify-content: left;
+    padding: 0;
+    border-color: none !important;
+}
+
+.pagination li {
+    margin: 0 5px;
+    border-color: none !important;
+}
+
+.pagination li a {
+    cursor: pointer;
+    padding: 0.5rem 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.pagination li .active a {
+    color: white;
+    border-color: #007bff;
+    background: #e86f4f; 
+  font-family: 'Poppins';
+}
+
+.pagination li a:hover {
+    background-color: #e8704fc8;
+    color: white;
+}
+
+.pagination .break-me a {
+    border-color: #dee2e6;
+}

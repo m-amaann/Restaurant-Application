@@ -43,6 +43,9 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link" href="/Contact">Contact</a>
           </li>
+          <li className="nav-item">
+          <a className="nav-link" href="/Categoryall">Category</a>
+          </li>
         </ul>
         <div className="navbar-right">
           {isLoggedIn ? (

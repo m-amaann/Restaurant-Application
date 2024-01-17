@@ -1,0 +1,64 @@
+/* AllMenuItems.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sidebar {
+    /* Styling for sidebar */
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .category-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .category-list li:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .product-display-area {
+    /* Styling for the product display area */
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Include the styles from your Card.css */
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 767px) {
+    .sidebar {
+      display: none; /* Hide the sidebar on smaller screens if desired */
+    }
+    .product-container {
+      justify-content: center;
+    }
+  }
+  
+  /* Pagination styles */
+  /* ... your existing pagination styles ... */
+  
