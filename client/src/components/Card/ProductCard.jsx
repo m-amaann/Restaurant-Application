@@ -2,10 +2,19 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
 
+// import { useNavigate } from 'react-router-dom';
+
 import Porduct from '../../assets/food/submarine.jpeg';
 
 
 const ProductCard = () => {
+    // const navigate = useNavigate();
+
+    // const goToProductDetails = () => {
+    //     navigate('/menu-details', { state: { product } });
+    //   };
+
+
     return (
         <>
         <div className="card product-card h-95 d-flex ">
@@ -29,9 +38,12 @@ const ProductCard = () => {
                 </div>
             </div>
 
-            <div className="card-footer">
+            <a href="/menu-details" className="card-footer">
+            <ion-icon name="eye" className="detail-icons"></ion-icon>
+            </a>
+            {/* <div className="card-footer" onClick={goToProductDetails}>
                 <ion-icon name="eye" className="detail-icons"></ion-icon>
-            </div>
+            </div> */}
         </div>
         </>
     );

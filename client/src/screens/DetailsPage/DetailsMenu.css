@@ -1,0 +1,83 @@
+.details-menu .menu-image {
+    position: relative;
+    text-align: center; /* Center image in case it's not full width */
+  }
+  
+  .details-menu .menu-image img {
+    width: 600px;
+    height: 450px;
+    border-radius: 8px; /* Assuming you want rounded corners */
+    object-fit: fill;
+  }
+  
+  .details-menu .discount-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #dc3545; /* Adjust the color as needed */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  
+  .details-menu .menu-info h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    margin-bottom: 10px;
+  }
+  
+  .details-menu .menu-pricing {
+    align-items: center;
+    justify-content: space-between;      
+    margin-bottom: 20px; 
+  }
+  
+  .details-menu .menu-pricing .price {
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: bold;
+  }
+  
+  .details-menu .menu-pricing .quantity-selector button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .details-menu .menu-pricing .quantity-selector input {
+    width: 50px; /* Fixed width */
+    text-align: center;
+    margin: 0 5px;
+  }
+  
+  .details-menu .add-to-cart {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .details-menu .menu-description {
+    color: #666;
+    margin-bottom: 20px; /* Space before tabs */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .details-menu .menu-pricing {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .details-menu .menu-pricing .add-to-cart {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Further customization for tabs and other elements as needed */
+  

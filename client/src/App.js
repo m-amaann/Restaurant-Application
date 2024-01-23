@@ -15,6 +15,7 @@ import Contact from "./screens/Contact";
 import Menus from "./screens/Menus";
 import UserProfile from "./screens/User/UserProfile";
 import CategoryMenu from "./screens/AllView/CategoryMenu";
+import DetailsMenu from "./screens/DetailsPage/DetailsMenu";
 
 
 
@@ -31,6 +32,8 @@ const Routing = () => {
       <Route path="/user/:activepage" element={<UserProfile />} />
 
       <Route path="/Categoryall" element={<CategoryMenu />} />
+      <Route path="/menu-details" element={<DetailsMenu />} />
+
       
       
     </Routes>

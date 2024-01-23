@@ -58,7 +58,7 @@ function Home() {
               <div className="col-lg-4" data-aos="zoom-in" >
                 <img src={about1} alt="Sea-King" className="about-img" />
               </div>
-              <div data-aos="fade-left"  data-aos-delay="500" className="col-lg-8">
+              <div data-aos="fade-left" data-aos-delay="500" className="col-lg-8">
                 <div className="about-content">
                   <h2 >About Sea King</h2>
                   <h3>The Health Food For Wealthy Mood</h3>
@@ -82,34 +82,30 @@ function Home() {
         {/* Category Sliding */}
         <CategoryCompoent />
 
-        {/* Famous Dishes */}
+        {/* Info Dishes */}
         <section className="info-section" data-aos="fade-in" data-aos-delay="500">
           <div className="container">
             <div className="row text-center">
               <div className="col-md-4">
-                <div>
-                  <h3>Opening Hours</h3>
-                  <p>Monday - Friday<br />10:00 AM to 10:00 PM<br />Sunday at<br />11:00 AM to 4:00 PM</p>
-                </div>
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday<br />10:00 AM to 10:00 PM<br />Sunday at<br />11:00 AM to 4:00 PM</p>
               </div>
               <div className="col-md-4">
-                <div>
-                  <h3>Location</h3>
-                  <p>Diamond Street,<br />234 3rd avenue Apartment.<br />New York City.</p>
-                </div>
+                <h3>Location</h3>
+                <p>VW3, Port City <br />Colombo,Sri Lanka </p>
               </div>
               <div className="col-md-4 dishes-row">
                 <div className="col-md-6">
                   <img src={image1} alt="Dish 1" className="img-fluid" />
                 </div>
                 <div className="col-md-6">
-                  <img src={image1} alt="Dish 1" className="img-fluid" />
+                  <img src={image1} alt="Dish 2" className="img-fluid" />
                 </div>
-                <div className="col-md-6">
-                  <img src={image1} alt="Dish 1" className="img-fluid" />
+                <div className="col-md-6 ml-4">
+                  <img src={image1} alt="Dish 3" className="img-fluid" />
                 </div>
-                <div className="col-md-6">
-                  <h3 className='text-center m-0 text-warning'>Famous Dishes</h3>
+                <div className="col-md-6 text-warning">
+                  <h3>Famous Dishes</h3>
                 </div>
               </div>
             </div>
