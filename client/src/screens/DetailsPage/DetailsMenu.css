@@ -1,83 +1,406 @@
-.details-menu .menu-image {
-    position: relative;
-    text-align: center; /* Center image in case it's not full width */
-  }
+/* DetailsMenu.css */
+.menu-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.menu-image {
+  position: relative;
+}
+
+.menu-image img {
+  width: 600px;
+  height: 490px;
+  border-radius: 10px;
+  object-fit:cover;
+}
+
+.discount-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #F59046;
+  color: white;
+  padding: 4px 11px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-family: 'Poppins';
+}
+
+.favorite-icon {
+  position: absolute;
+  bottom: 12px;
+  right: 23px;
+  color: rgb(242, 67, 67);
+  font-size: 21px;
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.title-name {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  font-family: 'Barlow';
+  font-weight:600;
+}
+
+.menu-rating-price {
+  align-items: center;
+  display: flex;
+}
+
+.menu-rating-price  .star-rating i
+{ 
+  color:rgb(239, 190, 67);
+}
+
+.ratingreview-name {
+  font-size: 12px;
+  color: #e87b60;
+  font-family: 'Poppins';
+}
+
+.menu-price .price {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #e45937;
+  font-family: 'Poppins';
+
+}
+
+
+.Quantity-container {
+  display: flex;
+}
+
+.Quantity-container span {
+  font-size: 14px;
+  font-family: 'Poppins';
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-selector i {
+  cursor: pointer;
+}
+
+.quantity-selector input {
+  text-align: center;
+  margin: 0 5px;
+  font-family: 'Poppins';
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  width: 50px;
+  font-size: 14px;
+  color: #757575;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.add-to-cart,
+.buy-now {
+  flex: 0.4;
+  text-align: center;
+  padding: 7px 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14.5px;
   
-  .details-menu .menu-image img {
-    width: 600px;
-    height: 450px;
-    border-radius: 8px; /* Assuming you want rounded corners */
-    object-fit: fill;
-  }
+}
+
+.add-to-cart {
+  background-color: #E76F51; 
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+.add-to-cart i 
+{
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.buy-now {
+  background-color: #28a745;
+}
+
+.divider-line {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 2rem 0;
+}
+
+.menu-description {
+  color: #666;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+
+/* Tab Start */
+.tabs-container {
+  margin-top: 2rem;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  font-family:'Poppins';
+  font-size: 14.5px;
+  margin-right: 10px;
+  color: #6a6868;
+}
+
+.tab-item.active {
+  border-bottom: 2px solid #E76F51;
+  color: #E76F51;
+}
+
+.tab-content {
+  padding: 20px 0;
+}
+
+.option-group {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  max-width: max-content;
+}
+
+.tab-content .option-title {
+  font-weight: normal;
+  margin-bottom: 15px;
+  color: #8e8d8d;
+  font-size: smaller;
+}
+
+.options-row {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px;
+}
+
+.vertical-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
+
+.custom-checkbox span {
+  padding-left: 2em;
+  position: relative;
+  font-size: 13px;
+  font-family:'Poppins';
+  color: #636363;
+
+
+}
+
+.custom-checkbox label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.custom-checkbox span:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + span:before {
+  background-color: #E76F51; /* Checked color */
   
-  .details-menu .discount-tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #dc3545; /* Adjust the color as needed */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-weight: bold;
+}
+
+
+.custom-checkbox input[type="checkbox"]:checked + span:after {
+  content: '✔';
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.7);
+  color: white;
+  font-size: 1em;
+}
+
+.option-group .choice-Addons
+{
+  display: flex;
+}
+
+.price-tag {
+  color: #888;
+  margin-left: 10px;
+  font-size: 12px;
+}
+/* Tab End */
+
+
+
+
+/* Reviews Section */
+/* ... existing styles ... */
+
+/* Reviews Section */
+.reviews-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.review-summary {
+  flex-basis: 40%;
+  padding-right: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.average-stars {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.bar-container {
+  height: 10px;
+  background-color: #e0e0e0;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.bar {
+  height: 100%;
+  background-color: #ffc107;
+}
+
+.reviews-list {
+  flex-basis: 58%;
+  padding-left: 20px;
+}
+
+.review-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.bx-star, .bxs-star {
+  color: gold; /* Star color */
+  margin-right: 2px;
+}
+
+.review-content {
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .reviews-section {
+    flex-direction: column;
   }
-  
-  .details-menu .menu-info h2 {
-    font-size: 2rem; /* Adjust size as needed */
+
+  .review-summary {
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .reviews-list {
+    padding-left: 0;
+  }
+}
+
+
+/* Review Section End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-actions {
+    flex-direction: column;
+  }
+
+  .add-to-cart,
+  .buy-now {
+    width: 100%;
     margin-bottom: 10px;
   }
-  
-  .details-menu .menu-pricing {
-    align-items: center;
-    justify-content: space-between;      
-    margin-bottom: 20px; 
+
+  .custom-checkbox {
+    min-width: calc((100% / 4) - 15px); 
   }
-  
-  .details-menu .menu-pricing .price {
-    font-size: 1.5rem; /* Adjust size as needed */
-    font-weight: bold;
-  }
-  
-  .details-menu .menu-pricing .quantity-selector button {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 5px;
-    cursor: pointer;
-  }
-  
-  .details-menu .menu-pricing .quantity-selector input {
-    width: 50px; /* Fixed width */
-    text-align: center;
-    margin: 0 5px;
-  }
-  
-  .details-menu .add-to-cart {
-    background-color: #28a745; /* Green color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .details-menu .menu-description {
-    color: #666;
-    margin-bottom: 20px; /* Space before tabs */
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .details-menu .menu-pricing {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .details-menu .menu-pricing .add-to-cart {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
-  
-  /* Further customization for tabs and other elements as needed */
-  
+}
+
