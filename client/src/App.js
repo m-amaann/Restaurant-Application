@@ -31,7 +31,7 @@ const Routing = () => {
       <Route path="/Menu" element={<Menus />} />
       <Route path="/user/:activepage" element={<UserProfile />} />
 
-      <Route path="/Categoryall" element={<CategoryMenu />} />
+      <Route path="/CategoryAll/:categoryId" element={<CategoryMenu />} />
       <Route path="/menu-details" element={<DetailsMenu />} />
 
       

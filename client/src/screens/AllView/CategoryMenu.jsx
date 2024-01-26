@@ -1,36 +1,50 @@
 // CategoryMenu.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/layouts/Navbar';
 import ProductCard from '../../components/Card/ProductCard';
 import './CategoryMenu.css';
 import Pagination from '../../components/Pagination';
+import { useParams, Link } from 'react-router-dom';
 
 function CategoryMenu() {
+  const { categoryId } = useParams();
+
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(10);
   const [sortBy, setSortBy] = useState('featured');
-  const [products] = useState([...Array(23).keys()].map(id => ({ id })));
+  const [menus, setMenus] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchMenus = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/menu/category/${categoryId}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setMenus(data);
+      } catch (error) {
+        console.error('Error fetching menus:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMenus();
+  }, [categoryId]);
 
-
-  // sorting by products items
-  const getSortedProducts = () => {
-    return products;
+  const getSortedMenus = () => {
+    return menus;
   };
-
 
   const handlePageClick = (data) => {
     const selectedPage = data.selected;
     setCurrentPage(selectedPage);
   };
 
-  const pageCount = Math.ceil(products.length / itemsToShow);
+  const pageCount = Math.ceil(menus.length / itemsToShow);
 
-
-  const currentProducts = getSortedProducts().slice(currentPage * itemsToShow, (currentPage + 1) * itemsToShow);
-
-
-
+  const currentMenus = getSortedMenus().slice(currentPage * itemsToShow, (currentPage + 1) * itemsToShow);
 
   return (
     <div>
@@ -45,7 +59,7 @@ function CategoryMenu() {
         </nav>
         <div className="title-area">
           <h1 className="item-title">BURGERS</h1>
-          <span className="item-count">{products.length} items found</span>
+          <span className="item-count">{loading ? 'Loading...' : `${menus.length} items found`}</span>
         </div>
         <div className="controls">
           <div className="dropdown-wrapper">
@@ -73,13 +87,22 @@ function CategoryMenu() {
             </div>
           </div>
         </div>
-        <div className="row">
-          {currentProducts.map((product, index) => (
-            <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <p>Loading menus...</p>
+        ) : menus.length === 0 ? (
+          <div>
+            <p>No menu items found in this category.</p>
+            
+          </div>
+        ) : (
+          <div className="row">
+            {currentMenus.map((menu, index) => (
+              <div className="col-lg-3 col-md-4 col-sm-6" key={menu._id}>
+                <ProductCard menu={menu} />
+              </div>
+            ))}
+          </div>
+        )}
         <Pagination
           pageCount={pageCount}
           handlePageClick={handlePageClick}

@@ -1,17 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import '../css/section/CategoryListing.css'; 
-
-
-// Import your category images
-import CategoryImage1 from '../assets/cover/burger/2.png';
-import CategoryImage2 from '../assets/cover/burger/3d.png';
-import CategoryImage3 from '../assets/food/2.jpeg';
-import CategoryImage4 from '../assets/food/1.webp';
-import CategoryImage5 from '../assets/food/dessert.jpeg';
-import CategoryImage6 from '../assets/food/submarine.jpeg';
-import CategoryImage7 from '../assets/cover/burger/3.jpeg';
+import '../css/section/CategoryListing.css';
+import { Link } from 'react-router-dom';
 
 const responsive = {
   desktop: {
@@ -25,7 +16,7 @@ const responsive = {
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-  }
+  },
 };
 
 const CustomLeftArrow = ({ onClick }) => (
@@ -40,20 +31,26 @@ const CustomRightArrow = ({ onClick }) => (
   </button>
 );
 
-function CategoryCompoent() {
+function CategoryComponent() {
+  const [categories, setCategories] = useState([]);
 
-  
+  useEffect(() => {
+    // Fetch categories from your API
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/category/getAllCategory`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setCategories(data.categories);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
 
-  const categories = [
-    { img: CategoryImage1, title: 'Chicken, Meat' },
-    { img: CategoryImage2, title: 'Cleaning' },
-    { img: CategoryImage3, title: 'Sub' },
-    { img: CategoryImage4, title: 'Burger' },
-    { img: CategoryImage5, title: 'Pasta' },
-    { img: CategoryImage6, title: 'Cake' },
-    { img: CategoryImage7, title: 'Dinner' },
-  ];
-
+    fetchCategories();
+  }, []);
 
   return (
     <div className="featured-categories-container" data-aos="fade-right" data-aos-offset="300">
@@ -70,14 +67,14 @@ function CategoryCompoent() {
         customRightArrow={<CustomRightArrow />}
       >
         {categories.map((category, index) => (
-          <div key={index} className="carousel-item-content">
-            <img src={category.img} alt={category.title} className="category-image" />
-            <p className="category-title">{category.title}</p>
-          </div>
+          <Link to={`/CategoryAll/${category.id}`} key={index} className="carousel-item-content">
+            <img src={category.image} alt={category.name} className="category-image" />
+            <p className="category-title">{category.name}</p>
+          </Link>
         ))}
       </MultiCarousel>
     </div>
   );
 }
 
-export default CategoryCompoent;
+export default CategoryComponent;

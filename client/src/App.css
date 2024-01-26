@@ -4,9 +4,6 @@
 /* Main.css */
 
 
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +16,6 @@ body {
 }
 
 
-
 /* Navbar Start */
 .navbar {
   display: flex !important;
@@ -30,8 +26,8 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   z-index: 1050;
+  transition: padding 0.3s ease;
 }
-
 
 .navbar-left .logo {
   height: 70px;
@@ -40,6 +36,7 @@ body {
 .nav-item {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .nav-item a {
@@ -51,14 +48,28 @@ body {
   font-size: 15px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
+  position: relative;
 }
 
 .nav-item a:hover,
 .nav-item a.active {
   color: #e76f51;
   border-bottom: 3px solid #e76f51;
+  transition: border-bottom 0.4s ease; /* Add transition for smoothness */
 }
 
+/* styles for indicator */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #e76f51;
+  transition: width 0.3s ease, left 0.3s ease; /* Add transition for smoothness */
+  transform: translateX(-50%);
+}
 
 .navbar .logo {
   width: 140px;
@@ -75,7 +86,6 @@ body {
   cursor: pointer;
 }
 
-
 .navbar .navbar-right box-icon {
   font-size: 35px;
   color: #333;
@@ -91,7 +101,6 @@ body {
   padding: 0.14rem 0.4rem;
   font-size: 10px;
 }
-
 
 .sign-up-btn {
   background-color: #e76f51;
@@ -135,9 +144,8 @@ body {
   height: 40px;
   width: 40px;
   cursor: pointer;
-border-radius: 50%;
-margin-left: 10px;
-
+  border-radius: 50%;
+  margin-left: 10px;
 }
 
 .navbar-profile-img-btn-dropdown {
@@ -165,8 +173,6 @@ margin-left: 10px;
 }
 
 /* NAVBAR STYLE END */
-
-
 
 
 

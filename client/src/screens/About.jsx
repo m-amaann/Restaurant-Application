@@ -19,20 +19,20 @@ function About() {
         <div className="row">
           <div className="col-md-7">
             <h1 className="about-heading">About Us</h1>
-            <p className="about-text">
+            <p className="about-text" data-aos="fade-left" >
               At Sea King, our passion for exceptional culinary experiences drives us. We blend the swift zest of fast food with the intricate spices of Indian cuisine and the hearty essence of Italian dishes. In our kitchen, every dish is a canvas of flavour, painted with the freshest local ingredients and a dash of innovation.<br /><br/>
               Join us for an unforgettable journey across continents, where the sizzle of the grill and the aroma of simmering herbs promise a feast that's not just eaten, but savoured. Welcome to Sea King - where every meal tells a story.
             </p>
           </div>
-          <div className="col-md-5">
+          <div className="col-md-5" data-aos="fade-right" data-aos-delay="700">
             <img src={AboutUs} alt="Delicious Food" className="img-fluid" />
           </div>
         </div>
 
         <div className="row mt-4 position-relative">
           <div className="col-12 col-lg-6">
-            <img src={Image1} alt="Food 1" className="img-fluid rounded-start left-image" />
-            <img src={Image2} alt="Food 2" className="img-fluid rounded-end right-image" />
+            <img src={Image1} alt="Food 1" className="img-fluid rounded-start left-image" data-aos="fade-right"/>
+            <img src={Image2} alt="Food 2" className="img-fluid rounded-end right-image" data-aos="fade-left"/>
           </div>
           <div className="col-12 col-lg-6">
             <div className="text-container">

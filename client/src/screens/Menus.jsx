@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/layouts/Navbar';
 import ProductCard from '../components/Card/ProductCard';
 import { FaAngleRight } from 'react-icons/fa'; // Ensure you've installed react-icons
@@ -6,15 +6,62 @@ import '../css/menus.css';
 import Footer from '../components/layouts/Footer';
 
 function Menus() {
-  const categories = ['Seafood', 'Sides', 'Desserts', 'Beverages', 'Special Diets', 'Kids Menu', 'Seasonal Specials', 'Starter'];
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
-  const [products] = useState([...Array(8).keys()].map(n => ({ id: n, name: `Product ${n + 1}` })));
+  const [categories, setCategories] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('');
+  const [menus, setMenus] = useState([]);
+  const [itemsToShow, setItemsToShow] = useState(25);
 
-  const [itemsToShow, setItemsToShow] = useState(10);
+
+  // Fetch categories function
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/category/getAllCategory`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setCategories(data.categories);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+    fetchCategories();
+  }, []);
 
 
-  const handleCategoryClick = (category) => {
-    setActiveCategory(category);
+  // Fetch menus function
+  useEffect(() => {
+    const fetchMenus = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/menu/all`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setMenus(data);
+      } catch (error) {
+        console.error('Error fetching menus:', error);
+      }
+    };
+    fetchMenus();
+  }, []);
+
+
+const handleCategoryClick = (category) => {
+  setActiveCategory(category);
+
+  const filteredMenus = category === 'All'
+    ? menus
+    : menus.filter((menu) => menu.category === category);
+
+  setMenus(filteredMenus);
+};
+
+
+
+  const menuItemsShowChange = (e) => {
+    setItemsToShow(parseInt(e.target.value, 10));
   };
 
   return (
@@ -26,7 +73,7 @@ function Menus() {
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="/">Home</a></li>
               <li className="breadcrumb-item"><a href="/Menu">Menu</a></li>
-              <li className="breadcrumb-item active" aria-current="page">Seafood</li>
+              <li className="breadcrumb-item active" aria-current="page">{activeCategory}</li>
             </ol>
           </nav>
           <div className="col-md-3 sidebar">
@@ -38,7 +85,7 @@ function Menus() {
             <div className="categorylist-container">
               <h2 className='category-title'>Categories</h2>
               <ul className="category-list">
-                {categories.map((category, index) => (
+                {['All', ...categories].map((category, index) => (
                   <li key={index}
                     className={`category-item ${activeCategory === category ? 'active' : ''}`}
                     onClick={() => handleCategoryClick(category)}>
@@ -51,14 +98,14 @@ function Menus() {
           </div>
           <div className="col-md-9 product-display-area">
             <div className="title-section">
-              <h1 className="page-title">Seafood</h1>
-              <span className="item-count"><b>{products.length}</b> items found</span>
+              <h1 className="page-title">{activeCategory}</h1>
+              <span className="item-count"><b>{menus.length}</b> items found</span>
             </div>
             <div className="dropdown-control">
               <div className="dropdown-wrapper">
                 <label htmlFor="show-items" className="dropdown-label">Show:</label>
                 <div className="dropdown">
-                  <select id="show-items" value={itemsToShow} onChange={e => setItemsToShow(e.target.value)}>
+                  <select id="show-items" value={itemsToShow} onChange={menuItemsShowChange}>
                     <option value="4">4</option>
                     <option value="10">10</option>
                     <option value="16">16</option>
@@ -70,16 +117,16 @@ function Menus() {
               </div>
             </div>
             <div className="row">
-              {products.map((product) => (
-                <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={product.id}>
-                  <ProductCard product={product} />
+              {menus.slice(0, itemsToShow).map((menu) => (
+                <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={menu._id}>
+                  <ProductCard menu={menu} />
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -11,7 +11,6 @@ const Navbar = () => {
   const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
   const isLoggedIn = user !== null;
 
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light" data-aos="fade-in">
       <a className="navbar-brand" href="/">
@@ -43,9 +42,7 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link" href="/Contact">Contact</a>
           </li>
-          <li className="nav-item">
-          <a className="nav-link" href="/Categoryall">Category</a>
-          </li>
+
         </ul>
         <div className="navbar-right">
           {isLoggedIn ? (
@@ -55,9 +52,9 @@ const Navbar = () => {
                 <span className="cart-indicator">{cartItemsCount}</span>
               </div>
 
-              <div class="dropdown">
+              <div className="dropdown">
                 <button
-                  class="btn btn-secondary dropdown-toggle navbar-profile-img-btn-dropdown"
+                  className="btn btn-secondary dropdown-toggle navbar-profile-img-btn-dropdown"
                   type="button"
                   id="dropdownMenuButton"
                   data-toggle="dropdown"
@@ -68,9 +65,9 @@ const Navbar = () => {
                     alt="User profile"
                   />
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/user/accountsettings">Profile</a>
-                  <a class="dropdown-item" href="##">Logout</a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a className="dropdown-item" href="/user/accountsettings">Profile</a>
+                  <a className="dropdown-item" href="##">Logout</a>
                 </div>
               </div>
             </>
@@ -84,4 +81,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

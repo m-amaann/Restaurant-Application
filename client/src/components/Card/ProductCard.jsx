@@ -2,26 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
 
-// import { useNavigate } from 'react-router-dom';
-
-import Porduct from '../../assets/food/submarine.jpeg';
 
 
-const ProductCard = () => {
-    // const navigate = useNavigate();
-
-    // const goToProductDetails = () => {
-    //     navigate('/menu-details', { state: { product } });
-    //   };
-
+const ProductCard = ({ menu }) => {
 
     return (
         <>
         <div className="card product-card h-95 d-flex ">
-            <img src={Porduct} className="card-img-top" alt="Menu item" />
+            <img src={menu.image} className="card-img-top" alt={menu.name}  />
             <div className="card-body">
-                <h6 className="card-category">Burger</h6>
-                <h5 className="card-title">King Slice Burgers</h5>
+                <h6 className="card-category">{menu.category}</h6>
+                <h5 className="card-title">{menu.name}</h5>
                 <div className="card-rating">
                     {[...Array(5)].map((star, index) => {
                         const ratingValue = index + 1;
@@ -34,16 +25,14 @@ const ProductCard = () => {
                     <span className="card-rating-count">(24)</span>
                 </div>
                 <div className="card-price">
-                    <h5>LKR.2700</h5>
+                    <h5>LKR.{menu.price.toFixed(2)}</h5>
                 </div>
             </div>
 
-            <a href="/menu-details" className="card-footer">
+            <a href={`/menu-details/${menu._id}`} className="card-footer">
             <ion-icon name="eye" className="detail-icons"></ion-icon>
             </a>
-            {/* <div className="card-footer" onClick={goToProductDetails}>
-                <ion-icon name="eye" className="detail-icons"></ion-icon>
-            </div> */}
+           
         </div>
         </>
     );

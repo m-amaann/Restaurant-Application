@@ -31,7 +31,7 @@ const menuSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      additional_price: {
+      topping_price: {
         type: Number,
         required: true,
         min: 0 
@@ -40,15 +40,15 @@ const menuSchema = new mongoose.Schema({
   ],
   cheeseOptions: [
     {
-      cheese_id: {
+      cheeseId: {
         type: mongoose.Schema.Types.ObjectId,
         auto: true 
       },
-      cheese_name: {
+      cheeseName: {
         type: String,
         required: true
       },
-      additional_price: {
+      cheesePrice: {
         type: Number,
         required: true,
         min: 0 
@@ -57,15 +57,15 @@ const menuSchema = new mongoose.Schema({
   ],
   riceOptions: [
     {
-      rice_id: {
+      riceId: {
         type: mongoose.Schema.Types.ObjectId,
         auto: true 
       },
-      rice_name: {
+      riceName: {
         type: String,
         required: true
       },
-      additional_price: {
+      ricePrice: {
         type: Number,
         required: true,
         min: 0 
@@ -74,15 +74,15 @@ const menuSchema = new mongoose.Schema({
   ],
   addExtraOption: [
     {
-      addons_id: {
+      addonsId: {
         type: mongoose.Schema.Types.ObjectId,
         auto: true 
       },
-      addons_name: {
+      addonsName: {
         type: String,
         required: true
       },
-      additional_price: {
+      addonsPrice: {
         type: Number,
         required: true,
         min: 0 

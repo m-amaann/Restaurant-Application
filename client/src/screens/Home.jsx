@@ -7,8 +7,6 @@ import '../css/responsive.css';
 import '../App.css';
 
 
-
-
 import image1 from '../assets/cover/3.jpg';
 import image2 from '../assets/cover/image2.jpeg';
 import about1 from '../assets/cover/about.jpg';

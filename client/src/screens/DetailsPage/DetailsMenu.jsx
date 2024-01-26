@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../components/layouts/Navbar';
 import './DetailsMenu.css';
 import MenuImage from '../../assets/cover/burger/2.png';
+import Footer from '../../components/layouts/Footer';
 
 function DetailsMenu() {
   const [quantity, setQuantity] = useState(1);
@@ -43,7 +44,7 @@ function DetailsMenu() {
       <Navbar />
       <div className="container menu-container mt-4">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-6" data-aos="flip-right">
             <div className="menu-image">
               <img src={MenuImage} alt="King Burger" className="img-fluid" />
               <span className="discount-tag">10% OFF</span>
@@ -51,7 +52,7 @@ function DetailsMenu() {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="menu-info">
+            <div className="menu-info" data-aos="fade-left"  data-aos-delay="800">
               <h2 className='title-name'>King Burger</h2>
               <div className='review-container mb-2'>
                 <div className="menu-rating-price">
@@ -186,6 +187,7 @@ function DetailsMenu() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
