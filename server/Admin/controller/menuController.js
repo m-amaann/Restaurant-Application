@@ -45,7 +45,7 @@ const createMenu = async (req, res) => {
 // Controller for getting all menus
 const getAllMenus = async (req, res) => {
     try {
-        const menus = await Menu.find();
+        const menus = await Menu.find().populate('category');
         res.status(200).json(menus);
     } catch (error) {
         console.error(error);
@@ -57,7 +57,7 @@ const getAllMenus = async (req, res) => {
 const getMenuById = async (req, res) => {
     try {
         const { id } = req.params;
-        const menu = await Menu.findById(id);
+        const menu = await Menu.findById(id).populate('category');
 
         if (!menu) {
             return res.status(404).json({ error: 'Menu not found' });
@@ -70,5 +70,23 @@ const getMenuById = async (req, res) => {
     }
 };
 
+// Controller for getting all menus by category ID
+const getMenuByCategoryId = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const menus = await Menu.find({ category: id }).populate('category');
 
-module.exports = { createMenu, getAllMenus, getMenuById };
+        if (!menus || menus.length === 0) {
+            return res.status(404).json({ error: 'No menus found for the given category ID' });
+        }
+
+        res.status(200).json(menus);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+
+
+module.exports = { createMenu, getAllMenus, getMenuById, getMenuByCategoryId };

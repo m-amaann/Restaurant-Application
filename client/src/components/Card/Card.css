@@ -17,8 +17,8 @@
   
   .card-img-top {
     width: 100%;
-    height: 200px;
-    object-fit:fill;
+    height: 190px;
+    object-fit:cover;
     border-radius: 15px;
     padding: 4px ;
 

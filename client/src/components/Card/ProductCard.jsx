@@ -7,11 +7,10 @@ import './Card.css';
 const ProductCard = ({ menu }) => {
 
     return (
-        <>
         <div className="card product-card h-95 d-flex ">
-            <img src={menu.image} className="card-img-top" alt={menu.name}  />
+            <img src={menu.image} className="card-img-top" alt={menu.name} />
             <div className="card-body">
-                <h6 className="card-category">{menu.category}</h6>
+                {menu.category && <h6 className="card-category">{menu.category.name}</h6>}
                 <h5 className="card-title">{menu.name}</h5>
                 <div className="card-rating">
                     {[...Array(5)].map((star, index) => {
@@ -30,11 +29,10 @@ const ProductCard = ({ menu }) => {
             </div>
 
             <a href={`/menu-details/${menu._id}`} className="card-footer">
-            <ion-icon name="eye" className="detail-icons"></ion-icon>
+                <ion-icon name="eye" className="detail-icons"></ion-icon>
             </a>
-           
+
         </div>
-        </>
     );
 };
 

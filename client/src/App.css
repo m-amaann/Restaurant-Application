@@ -331,3 +331,16 @@ body {
   margin-right: auto;
   padding: 0 15px;
 }
+
+
+.product-menu-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.product-menu-row .col-md-3{
+  width: 100%;
+}

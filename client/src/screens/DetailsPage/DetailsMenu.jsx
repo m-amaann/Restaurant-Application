@@ -81,7 +81,7 @@ function DetailsMenu() {
 
               <div className="menu-actions">
                 <button className="add-to-cart">
-                  <i class='bx bx-cart-alt bx-sm'></i> ADD TO CART
+                  <i className='bx bx-cart-alt bx-sm'></i> ADD TO CART
                 </button>
                 <button className="buy-now">BUY NOW</button>
               </div>
@@ -163,7 +163,7 @@ function DetailsMenu() {
                   {renderStars(calculateAverageRating())}
                   {[5, 4, 3, 2, 1].map(star => (
                     <div key={star} className="rating-bar">
-                      <span>{star} <i class='bx bxs-star' undefined ></i></span>
+                      <span>{star} <i className='bx bxs-star' undefined ></i></span>
                       <div className="bar-container">
                         <div className="bar" style={{ width: `${getRatingPercentage(star)}%` }}></div>
                       </div>

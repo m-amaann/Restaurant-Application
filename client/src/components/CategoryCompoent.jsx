@@ -43,7 +43,7 @@ function CategoryComponent() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setCategories(data.categories);
+        setCategories(data);
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
@@ -67,7 +67,7 @@ function CategoryComponent() {
         customRightArrow={<CustomRightArrow />}
       >
         {categories.map((category, index) => (
-          <Link to={`/CategoryAll/${category.id}`} key={index} className="carousel-item-content">
+          <Link to={`/CategoryAll/${category._id}`} key={index} className="carousel-item-content">
             <img src={category.image} alt={category.name} className="category-image" />
             <p className="category-title">{category.name}</p>
           </Link>

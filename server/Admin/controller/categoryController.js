@@ -56,7 +56,7 @@ const createCategory = async (req, res) => {
 const getAllCategory = async (req, res) => {
   try {
     const categories = await Category.find();
-    res.status(200).json({ success: true, categories });
+    res.status(200).json(categories);
   } catch (error) {
     console.error('Error getting all categories:', error);
     res.status(500).json({ success: false, error: 'Internal Server Error' });

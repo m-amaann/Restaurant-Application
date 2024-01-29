@@ -4,7 +4,7 @@ import Navbar from '../../components/layouts/Navbar';
 import ProductCard from '../../components/Card/ProductCard';
 import './CategoryMenu.css';
 import Pagination from '../../components/Pagination';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function CategoryMenu() {
   const { categoryId } = useParams();
@@ -15,7 +15,10 @@ function CategoryMenu() {
   const [menus, setMenus] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // console.log(categoryId);
+
   useEffect(() => {
+
     const fetchMenus = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/menu/category/${categoryId}`);
@@ -46,6 +49,8 @@ function CategoryMenu() {
 
   const currentMenus = getSortedMenus().slice(currentPage * itemsToShow, (currentPage + 1) * itemsToShow);
 
+  // console.log(currentMenus[0]?.category?.name)
+
   return (
     <div>
       <Navbar />
@@ -54,11 +59,11 @@ function CategoryMenu() {
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><a href="/">Home</a></li>
             <li className="breadcrumb-item"><a href="/Menu">Menu</a></li>
-            <li className="breadcrumb-item active" aria-current="page">Burgers</li>
+            <li className="breadcrumb-item active" aria-current="page">{currentMenus[0]?.category?.name}</li>
           </ol>
         </nav>
         <div className="title-area">
-          <h1 className="item-title">BURGERS</h1>
+          <h1 className="item-title">{currentMenus[0]?.category?.name}</h1>
           <span className="item-count">{loading ? 'Loading...' : `${menus.length} items found`}</span>
         </div>
         <div className="controls">
@@ -92,7 +97,7 @@ function CategoryMenu() {
         ) : menus.length === 0 ? (
           <div>
             <p>No menu items found in this category.</p>
-            
+
           </div>
         ) : (
           <div className="row">

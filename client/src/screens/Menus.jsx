@@ -10,7 +10,7 @@ function Menus() {
   const [activeCategory, setActiveCategory] = useState('');
   const [menus, setMenus] = useState([]);
   const [itemsToShow, setItemsToShow] = useState(25);
-
+  const [filteredMenus, setFilteredMenus] = useState([]);
 
   // Fetch categories function
   useEffect(() => {
@@ -21,14 +21,13 @@ function Menus() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setCategories(data.categories);
+        setCategories(data);
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
     };
     fetchCategories();
   }, []);
-
 
   // Fetch menus function
   useEffect(() => {
@@ -40,6 +39,7 @@ function Menus() {
         }
         const data = await response.json();
         setMenus(data);
+        setFilteredMenus(data); // Set filteredMenus to contain all menus initially
       } catch (error) {
         console.error('Error fetching menus:', error);
       }
@@ -47,22 +47,24 @@ function Menus() {
     fetchMenus();
   }, []);
 
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
 
-const handleCategoryClick = (category) => {
-  setActiveCategory(category);
+    const updatedFilteredMenus = category === 'All'
+      ? menus
+      : menus.filter((menu) => menu?.category?.name === category);
 
-  const filteredMenus = category === 'All'
-    ? menus
-    : menus.filter((menu) => menu.category === category);
-
-  setMenus(filteredMenus);
-};
-
-
+    setFilteredMenus(updatedFilteredMenus);
+    console.log("filtermenu");
+    console.log(updatedFilteredMenus);
+    console.log("end filtermenu");
+  };
 
   const menuItemsShowChange = (e) => {
     setItemsToShow(parseInt(e.target.value, 10));
   };
+
+  // console.log(menus)
 
   return (
     <div>
@@ -78,18 +80,27 @@ const handleCategoryClick = (category) => {
           </nav>
           <div className="col-md-3 sidebar">
             {/* Searchbar */}
-            <div class="form">
-              <i class="fa fa-search"></i>
-              <input type="text" class="form-control form-input" placeholder="Search anything..." />
+            <div className="form">
+              <i className="fa fa-search"></i>
+              <input type="text" className="form-control form-input" placeholder="Search anything..." />
             </div>
             <div className="categorylist-container">
               <h2 className='category-title'>Categories</h2>
               <ul className="category-list">
-                {['All', ...categories].map((category, index) => (
-                  <li key={index}
-                    className={`category-item ${activeCategory === category ? 'active' : ''}`}
-                    onClick={() => handleCategoryClick(category)}>
-                    {category}
+                <li
+                  className={`category-item ${activeCategory === 'All' ? 'active' : ''}`}
+                  onClick={() => handleCategoryClick('All')}
+                >
+                  All
+                  <FaAngleRight className="category-icon" />
+                </li>
+                {categories.map((category, index) => (
+                  <li
+                    key={index}
+                    className={`category-item ${activeCategory === category.name ? 'active' : ''}`}
+                    onClick={() => handleCategoryClick(category.name)}
+                  >
+                    {category.name}
                     <FaAngleRight className="category-icon" />
                   </li>
                 ))}
@@ -117,11 +128,17 @@ const handleCategoryClick = (category) => {
               </div>
             </div>
             <div className="row">
-              {menus.slice(0, itemsToShow).map((menu) => (
-                <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={menu._id}>
-                  <ProductCard menu={menu} />
+              {filteredMenus.length === 0 ? (
+                <div className="col-md-12">
+                  <p>No menu items found.</p>
                 </div>
-              ))}
+              ) : (
+                filteredMenus.slice(0, itemsToShow).map((menu) => (
+                  <div className="col-lg-3 col-md-4 col-sm-6">
+                    <ProductCard menu={menu} key={menu._id} />
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
