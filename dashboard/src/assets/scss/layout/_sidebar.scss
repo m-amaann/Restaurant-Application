@@ -1,10 +1,23 @@
+$sidebarWidth: 250px;
+$sidebarColor: #343a40;
+$primary: #007bff;
+$border-radius: 5px;
+
 .sidebarArea {
   flex-shrink: 0;
   width: $sidebarWidth;
   background-color: $sidebarColor;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+
   .nav-link {
     color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    transition: color 0.3s ease;
   }
+
   .sidenav-bg:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: $border-radius;
@@ -12,24 +25,61 @@
       color: white;
     }
   }
+
   .sidenav-bg .active {
-    background-color: $primary;
-    border-radius: $border-radius;
     color: white;
+  }
+
+  .category-dropdown {
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .profile-section {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 10px;
+    background-color: #223747;
+    padding: 10px;
+    border-radius: 5px;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .user-info {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+
+      span {
+        display: block;
+        font-size: 12px;
+      }
+    }
   }
 }
 
 @include media-breakpoint-down(lg) {
   .sidebarArea {
     position: fixed;
-    height: 100%;
-    overflow: auto;
-    top: 0;
     z-index: 1;
-    margin-left: -$sidebarWidth;
+    top: 0;
+    left: -$sidebarWidth;
+    height: 100%;
     transition: 0.2s ease-in;
+
     &.showSidebar {
-      margin-left: 0px;
+      left: 0;
     }
   }
 }

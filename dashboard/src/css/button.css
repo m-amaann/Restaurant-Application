@@ -1,0 +1,21 @@
+.custom-button {
+    font-size: 14px;
+    justify-content: space-between;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.custom-button i {
+    font-size: 17px;
+   text-align: center;
+   padding-right: 5px;
+   justify-content: center;
+}
+
+
+.page-container .breadcrumb {
+    margin: 0;
+    font-size: 14px;
+}

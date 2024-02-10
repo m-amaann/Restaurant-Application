@@ -1,21 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Navbar,
   Collapse,
   Nav,
-  NavItem,
   NavbarBrand,
-  UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   Dropdown,
   Button,
 } from "reactstrap";
-import Logo from "./Logo";
 import { ReactComponent as LogoWhite } from "../assets/images/logos/adminprowhite.svg";
 import user1 from "../assets/images/users/user4.jpg";
+
+import logo from '../assets/logo/Logo.png';
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -33,7 +32,7 @@ const Header = () => {
     <Navbar color="white" light expand="md" className="fix-header">
       <div className="d-flex align-items-center">
         <div className="d-lg-block d-none me-5 pe-3">
-          <Logo />
+          <img src={logo} width={160} alt='Dashboard-logo' />
         </div>
         <NavbarBrand href="/">
           <LogoWhite className="d-lg-none" />
@@ -63,27 +62,12 @@ const Header = () => {
 
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
-          <NavItem>
-            <Link to="/starter" className="nav-link">
-              Starter
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-          </NavItem>
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              DD Menu
-            </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+          <div class="search">
+            <input type="text" class="searchTerm" placeholder="Search here"/>
+              <button type="submit" class="searchButton">
+              <i class='bx bx-search'></i>
+              </button>
+          </div>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="transparent">

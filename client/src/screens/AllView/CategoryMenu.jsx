@@ -49,7 +49,6 @@ function CategoryMenu() {
 
   const currentMenus = getSortedMenus().slice(currentPage * itemsToShow, (currentPage + 1) * itemsToShow);
 
-  // console.log(currentMenus[0]?.category?.name)
 
   return (
     <div>

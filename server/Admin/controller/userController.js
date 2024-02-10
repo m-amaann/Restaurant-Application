@@ -27,7 +27,7 @@ const parser = new DatauriParser();
 const formatBufferTo64 = file => parser.format(path.extname(file.originalname).toString(), file.buffer);
 
 
-// Register a new user
+// Register User
 exports.register = async (req, res) => {
   multerUploads(req, res, async (err) => {
     if (err) {
@@ -37,7 +37,6 @@ exports.register = async (req, res) => {
     const { name, email, password, phone, address } = req.body;
 
     try {
-      // Check if user already exists
       const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res.status(409).json({ message: 'Email already in use' });
@@ -46,7 +45,7 @@ exports.register = async (req, res) => {
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 12);
 
-      // Upload the profile image to Cloudinary Users folder
+      // Upload image to Users folder
       let profileImageUrl = '';
       if (req.file) {
         const file64 = formatBufferTo64(req.file);
@@ -75,7 +74,8 @@ exports.register = async (req, res) => {
         },
       });
 
-      var mailOptions = {
+      var mailOptions = 
+      {
         from: "amaanrc11@gmail.com",
         to: email,
         subject: "Registered An Account",
@@ -135,7 +135,6 @@ exports.register = async (req, res) => {
         </body>
         </html>        
   `,
-
       };
 
       transporter.sendMail(mailOptions, function (error, info) {

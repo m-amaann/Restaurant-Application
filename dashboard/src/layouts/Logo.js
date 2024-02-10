@@ -1,10 +1,14 @@
-import { ReactComponent as LogoDark } from "../assets/images/logos/adminpro.svg";
+import { ReactComponent as LogoDark } from "../assets/images/logos/logo.svg";
 import { Link } from "react-router-dom";
+import logo from '../assets/logo/Logo.png';
+
 
 const Logo = () => {
   return (
     <Link to="/">
-      <LogoDark />
+      <img src={logo} alt='Dashboard-logo'/>
+
+      {/* <LogoDark /> */}
     </Link>
   );
 };

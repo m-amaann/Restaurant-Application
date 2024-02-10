@@ -15,7 +15,7 @@
 }
 
 .list-group-item {
-  background-color: $white !important;
+  // background-color: $white !important;
 }
 
 .circle-box {
@@ -51,4 +51,44 @@ table {
 
 .dropdown-menu {
   background-color: $white !important;
+}
+
+
+
+
+//Searchbar
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 240px;
+  border: 1px solid #b9b7b7;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 14px;
+}
+
+.searchTerm:focus{
+  color: #87adb2;
+}
+
+.searchButton {
+  width: 36px;
+  height: 36px;
+  border: none;
+  padding-top: 5px;
+  background: #E86F4F;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
 }
