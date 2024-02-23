@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-brand">
             <img src={LOGO} alt="Logo" className="footer-logo" />
-            <p>info@wicker.co<br />+1 (564) 345-0987</p>
+            <p>info@seaking.com<br/>+(94) 77 235 8096</p>
             <div className="footer-socials">
               <a href="##" className="social-link"><i className="bx bxl-facebook"></i></a>
               <a href="##" className="social-link"><i className="bx bxl-twitter"></i></a>
@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
             <div className="link-section">
               <h4>Get in Touch</h4>
-              <p>4517 Washington Ave.<br />Manchester, Kentucky 39495</p>
+              <p>VW3, Port City Colombo, Sri Lanka</p>
             </div>
           </div>
         </div>
